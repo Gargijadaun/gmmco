@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+}
+#container {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+}
+#logo1 {
+    box-sizing: border-box;
+    max-width: 50%;
+    max-height: 30%;
+    height: auto;
+    /* margin-bottom: 10px; */
+    margin-top:18%;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#button1, #button2 {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#button1 img, #button2 img {
+    margin-right: 10px;
+    max-width: 24px; /* Adjust the size as needed */
+    height: auto;
+}

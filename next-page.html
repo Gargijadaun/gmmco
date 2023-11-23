@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gmmco</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0; /* Remove default body margin */
+        }
+    
+        #logo {
+            max-width: 50%;
+            height: auto;
+            margin: 20px auto;
+        }
+    
+        #buttonContainer {
+            display: block;
+            margin: 8% 0; /* Adjust the margin to reduce mid gap */
+        }
+    
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s; /* Add smooth transition effect */
+            width: max-content; /* Set width to max-content */
+            border-top-right-radius: 30px; /* Add rounded corners */
+            border-bottom-left-radius: 30px;
+            cursor: pointer; /* Add pointer cursor to indicate clickable */
+        }
+    
+        .imageLink:hover img {
+            transform: scale(1.2); /* Increase size on hover */
+        }
+    
+        .imageLink img {
+            box-sizing: border-box; /* Include padding and border in the total width and height */
+            width: 40%;
+            height: auto;
+            border: 0; /* Remove border around the image */
+            border-top-right-radius: 30px; /* Add rounded corners */
+            border-bottom-left-radius: 30px;
+            transition: transform 0.3s; /* Add smooth transition effect */
+        }
+    
+        .imageLink:hover img {
+            transform: scale(1.2); /* Increase size on hover */
+        }
+    
+        @media (min-width: 768px) {
+            /* Adjustments for larger screens (PCs) */
+            #logo {
+                max-width: 30%;
+            }
+    
+            .imageLink {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img id="logo" src="./images/gmmcologo.jpg" alt="Italian Trulli">
+   
+    <div id="buttonContainer">
+        <div class="imageLink" >
+            <img src="./images/15-kVA.jpg" alt="Image 1" onclick="goToPage('page1.html')">
+        </div>
+        <div class="imageLink" >
+            <img src="./images/62-kva.jpg" alt="Image 2" onclick="goToPage('page2.html')">
+        </div>
+    </div>
+
+    <script>
+        function goToPage(page) {
+            // Redirect to the specified page
+            window.location.href = page;
+        }
+    </script>
+   
+</body>
+</html>
