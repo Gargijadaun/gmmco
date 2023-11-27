@@ -5,69 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gmmco</title>
     <style>
-        body {
+      body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-image: url('./images/BG.png'); /* Replace with your image URL */
+            background-repeat: no-repeat;
+            background-size: cover; /* Adjust to your preference */
+            display: grid;
         }
 
-        header {
-            color: rgb(7, 7, 146);
-            padding: 10px;
-            text-align: center;
-            text-size-adjust: 100%;
-            font-size: 150%;
-        }
 
-        /* footer {
-            color: #a79e9e;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            left:0;
-            font-size: 170%;
-        } */
+header {
+    color: rgb(7, 7, 146);
+    padding: 10px;
+    text-align: center;
+    text-size-adjust: 100%;
+    font-size: 150%;
+}
 
-        #imageContainer {
-            position: fixed;
-            padding: 20px;
-            height: 100vh;
-            display: block;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+footer {
+    color: #a79e9e;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    font-size: 170%;
+}
 
-        .image {
-            position: fixed;
-            overflow: hidden;
-            /* border-radius: 10px; */
-            cursor: pointer;
-           /* Adjust the width as needed */
-            height: auto;
-            transition: transform 0.3s;
-        }
+#imageContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-        .image img {
-            width: 100%;
-            height: auto;
-        }
+.image {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 
-        .image:hover{
-            transform: scale(1.1);
-        }
+.image img {
+    width: 100%;
+    height: auto;
+}
 
-        #backButton {
-            position: fixed;
-            top: 30px;
-            left: 10px;
-            cursor: pointer;
-        }
+.image:hover {
+    transform: scale(1.2);
+}
 
-        #backButton img {
-            width: 50px;
-            height: auto;
-        }
+#backButton {
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    cursor: pointer;
+}
+
+#backButton img {
+    width: 50px;
+    height: auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+    #imageContainer {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -78,45 +84,40 @@
         </div>
     </header>
     <!-- width: 200px; -->
-    <div id="imageContainer" >
+    <div id="imageContainer">
         <!-- Add more images as needed -->
-        <div class="image" style="top: 15%; left: 10%; width: 17%;">
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
             <img src="./images/01.jpg" alt="Image 1">
         </div>
-        <div class="image" style="top: 15%; left: 40%; width: 17%;">
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 1">
+        </div>
+        <div class="image" style="top: -6%; left: 22%;width: 50%;">
             <img src="./images/02.jpg" alt="Image 2">
         </div>
-        <div class="image" style="top: 15%; left: 70%; width: 17%;">
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
             <img src="./images/01.jpg" alt="Image 1">
         </div>
-        <div class="image" style="top: 43%; left: 10%;width: 17%;">
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
             <img src="./images/02.jpg" alt="Image 2">
         </div>
-        <div class="image" style="top: 43%; left: 40%; width: 17%;">
-            <img src="./images/01.jpg" alt="Image 1">
-        </div>
-      <div class="image" style="top: 43%; left: 70%; width: 17%;">
-            <img src="./images/02.jpg" alt="Image 2">
-        </div>
-        <div class="image" style="top: 71%; left: 10%; width: 17%;">
-            <img src="./images/01.jpg" alt="Image 1">
-        </div>
-        <div class="image" style="top: 71%; left: 40%; width: 17%;">
-            <img src="./images/02.jpg" alt="Image 2">
-        </div>
-        <div class="image" style="top: 71%; left: 70%; width: 17%;">
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
             <img src="./images/01.jpg" alt="Image 1">
         </div> 
-        <!-- Add more images as needed -->
-
-        <!-- Back button -->
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 2">
+        </div>
+        <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/01.jpg" alt="Image 1">
+        </div>
+      <div class="image" style="top: -6%; left: 22%; width: 50%;">
+            <img src="./images/02.jpg" alt="Image 2">
+        </div>
       
     </div>
-
-    <!-- <footer>
+    <footer>
         <p>Lesser Regulated Countries</p>
-    </footer> -->
-   
+    </footer>
     <script>
          function goBack() {
             window.history.back();
@@ -124,7 +125,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Get all elements with the class 'image'
             var images = document.querySelectorAll('.image');
-    
             // Mapping of image indices to corresponding page URLs
             var pageUrls = [
                 'image1.html',
@@ -135,9 +135,8 @@
                 'image6.html',             
                 'image7.html',
                 'image8.html',
-                'image9.html',
+                'image9.html',     
             ];
-    
             // Add click event listener to each image
             images.forEach(function (image, index) {
                 image.addEventListener('click', function () {

@@ -5,121 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gmmco</title>
     <style>
-        body {
+        body, html {
+            height: 100%;
+            width: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            background-image: url('./images/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-
-        header {
-            color: rgb(7, 7, 146);
-            padding: 10px;
-            text-align: center;
-            text-size-adjust: 100%;
-            font-size: 150%;
-        }
-
-        footer {
-            color: #a79e9e;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
+    
+        .boxco {
+            height: 100%;
             width: 100%;
-            left:0;
-            font-size: 170%;
+            /* position: absolute; */
+            margin: 0;
+            background-image: url('./images/logo 1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 10;
         }
-
+    
+        #video {
+            position: relative;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
         #imageContainer {
-            position: fixed;
+            top: 5%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+            gap: 26px;
             padding: 20px;
-            height: 100vh;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
         }
-
+    
         .image {
-            position: fixed;
+            position: relative;
             overflow: hidden;
-            /* border-radius: 10px; */
             cursor: pointer;
-           /* Adjust the width as needed */
-            height: auto;
             transition: transform 0.3s;
         }
-
+    
         .image img {
             width: 100%;
             height: auto;
         }
-
-        .image:hover{
+    
+        .image:hover,
+        #backButton:hover {
             transform: scale(1.2);
         }
-
+    
         #backButton {
-            position: fixed;
-            top: 30px;
-            left: 10px;
+            position: absolute;
+            top: -29px;
+            left: 14%;
             cursor: pointer;
         }
-
+    
         #backButton img {
             width: 50px;
             height: auto;
         }
+        @media only screen and (min-width: 992px) {
+            body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('./images/BG.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        .boxco {
+            height: 100%;
+            width: 100%;
+            /* position: absolute; */
+            margin: 0;
+            background-image: url('./images/logo 1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 10;
+        }
+    
+        #video {
+            position: relative;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        #imageContainer {
+            top: 5%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+            gap: 26px;
+            padding: 20px;
+        }
+    
+        .image {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+    
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+    
+        .image:hover,
+        #backButton:hover {
+            transform: scale(1.2);
+        }
+    
+        #backButton {
+            position: absolute;
+            top: -29px;
+            left: 14%;
+            cursor: pointer;
+        }
+    
+        #backButton img {
+            width: 50px;
+            height: auto;
+        }
+        #img1:hover {
+            content: url('./images/downE6.png');   
+        }  
+        #img2:hover {
+            content: url('./images/E6_up.png');   
+        }  
+        #img3:hover {
+            content: url('./images/downE6.png');   
+        }  
+        #img4:hover {
+            content: url('./images/E6_up.png');   
+        }  
+        #img5:hover {
+            content: url('./images/downE6.png');   
+        }  
+        #img6:hover {
+            content: url('./images/E6_up.png');   
+        }    
+}
+
     </style>
+    
 </head>
 <body>
-    <header>
+
+       
+    
+    <div class="boxco">
+       
+    <!-- <header>
         <h1>Industrial Engine Range</h1>
         <div id="backButton" onclick="goBack()">
             <img src="./images/back.png" alt="Back Button">
         </div>
-    </header>
+    </header> -->
     <!-- width: 200px; -->
+    <video id="video" autoplay loop muted>
+        <source src="./images/videohome.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
     <div id="imageContainer">
         <!-- Add more images as needed -->
-        <div class="image" style="top: 40%; left: 10%; width: 12%;">
-            <img src="./images/01.jpg" alt="Image 1">
+        <div id="backButton" onclick="goBack()">
+            <img src="./images/Arrow.png" alt="Back Button">
+            
         </div>
-        <div class="image" style="top: 34%; left: 33%; width: 11%;">
-            <img src="./images/01.jpg" alt="Image 1">
+       
+        <div class="image" style="    top: -12%;
+        left: 362%;
+        width: 281%;">
+       
+            <img id="img1"   src="./images/E6.png" alt="Image 1">
+           
         </div>
-        <div class="image" style="top: 31%; left: 48%;width: 10%;">
-            <img src="./images/02.jpg" alt="Image 2">
+        <div class="image" style="        top: 45%;
+        left: 512%;
+        width: 274%;
+    ">
+            <img id="img2" src="./images/E6.png" alt="Image 1">
         </div>
-        <div class="image" style="top: 28%; left: 62%; width: 9%;">
-            <img src="./images/01.jpg" alt="Image 1">
+        <div class="image" style="     top: -4%;
+        left: 790px;
+        width: 264%;">
+            <img id="img3"  src="./images/E6.png" alt="Image 2">
         </div>
-        <div class="image" style="top: 25%; left: 75%; width: 8%;">
-            <img src="./images/02.jpg" alt="Image 2">
+        <div class="image" style="     top: 57%;
+        left: 1088%;
+        width: 236%;;
+    ">
+            <img id="img4"  src="./images/E6.png" alt="Image 1">
         </div>
-        <div class="image" style="top: 53%; left: 28%; width: 11%;">
-            <img src="./images/01.jpg" alt="Image 1">
+        <div class="image" style="    top: 2%;
+        left: 1468%;
+        width: 237%;">
+            <img id="img5"  src="./images/E6.png" alt="Image 2">
+        </div>
+        <div class="image" style="    top: 56%;
+        left: 1380px;
+        width: 216%;;"> 
+            <img id="img6"  src="./images/E6.png" alt="Image 1">
         </div> 
-        <div class="image" style="top: 66%; left: 43%; width: 10%;">
-            <img src="./images/02.jpg" alt="Image 2">
+        <!-- <div class="image" style="top: 35%; left: 22%; width: 100%;">
+            <img src="./images/E6.png" alt="Image 2">
         </div>
-        <div class="image" style="top: 69%; left: 58%; width: 9%;">
-            <img src="./images/01.jpg" alt="Image 1">
+        <div class="image" style="top: 35%; left: 22%; width: 100%;">
+            <img src="./images/E6.png" alt="Image 1">
         </div>
-      <div class="image" style="top: 72%; left: 73%; width: 8%;">
-            <img src="./images/02.jpg" alt="Image 2">
-        </div>
-        
+      <div class="image" style="top: 35%; left: 22%; width: 100%;">
+            <img src="./images/E6.png" alt="Image 2">
+        </div> -->
        
-       
-        <!-- Add more images as needed -->
-
-        <!-- Back button -->
-      
     </div>
-
-    <footer>
-        <p>Lesser Regulated Countries</p>
-    </footer>
+  
    
+    <!-- <footer>
+        <p>Lesser Regulated Countries</p> 
+    </footer> -->
+    </div>
     <script>
          function goBack() {
             window.history.back();
@@ -127,7 +244,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Get all elements with the class 'image'
             var images = document.querySelectorAll('.image');
-    
             // Mapping of image indices to corresponding page URLs
             var pageUrls = [
                 'box1.html',
@@ -138,10 +254,8 @@
                 'box6.html',             
                 'box7.html',
                 'box8.html',
-                'box9.html',
-                
+                'box9.html',     
             ];
-    
             // Add click event listener to each image
             images.forEach(function (image, index) {
                 image.addEventListener('click', function () {
