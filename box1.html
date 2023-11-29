@@ -11,13 +11,14 @@
             width: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('./images/BG.png');
+            background-image: url('./newimage/BG.png');
             background-repeat: no-repeat;
             background-size: cover;
-            /* z-index: 10; */
         }
     
         .boxco {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             height: 100%;
             width: 100%;
             margin: 0;
@@ -42,19 +43,19 @@
             transform: scale(1.2);
         }
         .button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-.button:hover img {
-    content: url('./images/btn.png');   
-}
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        .button:hover img {
+            content: url('./images/btn.png');   
+        }
 
-.button img {
-    width: 100%;
-    height: auto;
-}
+        .button img {
+            width: 100%;
+            height: auto;
+        }
 
         .backButton {
             width: 2.8%;
@@ -70,113 +71,102 @@
             cursor: pointer;
         }
 
-        .image {
-            position: relative;
-            width: 33%;
-            left: 13%;
-            margin-top: -46%;
+        .image, .image1 {
+            
             animation-name: slideInUp;
         }
-       
-        .image img {
+
+        .image img, .image1 img {
             width: 100%;
             height: auto;
+        }
+
+        .image {
+            top: 19%;
+    width: 58%;
+    left: 27%;
+    position: relative;
         }
 
         .image1 {
-            position: absolute;
-    width: 48%;
-    left: 49.8%;
-    top: -9%;
-            animation-name: slideInRight;
-        }
-        /* .one {
-            height: 103%;
-    width: 172%;
+            top: 9%;
     position: relative;
-    left: -663px;
-    bottom: -4%;
-        } */
-
-        .image1 img {
-            width: 100%;
-            height: auto;
-            position: relative;
+    right: 5%;
         }
 
         #child {
-            
             display: block;
-    height: 103%;
-    width: 172%;
-    position: absolute;
-    left: -663px;
-    bottom: -4%;
-}
+            height: 103%;
+            width: 172%;
+            position: absolute;
+            left: -73.6%;
+            bottom: -5%;
+        }
 
-#headin {
-   
-    height: 7%;
-    width: 67%;
-    position: absolute;
-    left: 22%;
-    bottom: 72%;
-}  
+        #headin {
+            height: 7%;
+            width: 67%;
+            position: absolute;
+            left: 22%;
+            bottom: 72%;
+        }  
 
         #buttonContainer {
-            width: 34%;
+         
+    width: 32%;
     position: absolute;
-    bottom: 66%;
-    right: 6%;
+    bottom: 10%;
+    right: 55%;
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 13px;
     animation-name: slideInRight;
     animation-delay: 0.2s;
 }
-        
 
-.button {
-    opacity: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-}
-.button:hover{
-    content: url('./images/btn.png');   
-}
-.button img {
-    width: 100%;
-    height: auto;
-}
+        .button {
+            opacity: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        .button:hover {
+            content: url('./images/btn.png');   
+        }
 
-/* Apply different animation delays to each button */
-.button:nth-child(1) {
-    animation-delay: 0.2s;
-}
+        .button img {
+            width: 100%;
+            height: auto;
+        }
 
-.button:nth-child(2) {
-    animation-delay: 0.4s;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.button:nth-child(3) {
-    animation-delay: 0.6s;
-}
+        /* Apply different animation delays to each button */
+        .button:nth-child(1) {
+            animation-delay: 0.2s;
+        }
 
-.button:nth-child(4) {
-    animation-delay: 0.8s;
-} 
+        .button:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .button:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .button:nth-child(4) {
+            animation-delay: 0.8s;
+        } 
 
         .image-text {
             display: none;
@@ -218,70 +208,43 @@
             }
         }
 
-        /* Media query for smaller screens (phones) */
-        @media (max-width: 480px) {
-            .image {
-                width: 76%;
-                left: 13%;
-                margin-top: 22%;
+        @media only screen and (max-width: 768px) {
+            .boxco {
+                grid-template-columns: 1fr;
             }
-            
-            .button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-.button:hover #one{
-    content: url('./images/btn.png');   
-}
-.button img {
-    width: 100%;
-    height: auto;
-}
+
+            .image, .image1 {
+                width: 100%;
+                left: 0;
+                margin-top: 0;
+            }
 
             .backButton {
-                width: 20%;
+                width: 5.8%;
             }
-
-            .image1 {
-                margin-top: 293px;
-                width: 76%;
-                left: 13%;
-            }
-
-            .image-text {
-                font-size: 16px;
-            }
-
-            #buttonContainer {
-                position: static;
-                text-align: center;
-                margin-top: 10px;
-            }
+            .image1{
+            left: -8%;}
         }
     </style>
 </head>
 <body>
     <div class="boxco">
-        <video id="video" autoplay loop muted>
-            <source src="./images/videohome.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+       
         <div class="backButton" onclick="goBack()">
-            <img src="./images/Arrow.png" alt="Back Button">
+            <img src="./newimage/back.png" alt="Back Button">
         </div>
 
         <div class="image">
-            <img src="./images/Group 11 (2).png" alt="Left Image">
+            <img src="./newimage/Model.png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./images/box.png" alt="Right Image" id="first">
-            <img src="./images/key.png" alt="Image 2" id="child">
+            <img src="./newimage/description01.png" alt="Right Image" id="first">
+<!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
-          
+            <img src="./images/key.png" alt="Image 2" id="child"> -->
+            
         </div>
         <div id="buttonContainer">
             <button class="button" onclick="changeImage('./images/key.png')">
