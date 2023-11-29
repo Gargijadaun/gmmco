@@ -82,19 +82,22 @@
         }
 
         .image {
-            height: 80%;
-            top: 19%;
-    width: 58%;
-    left: 27%;
-    position: relative;
-        }
+        height: 80%;
+        top: 19%;
+        width: 58%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+    }
 
-        .image1 {
-            height: 100%;
-            top: 9%;
+    .image1 {
+        height: 78%;
+    top: 10%;
+    width: 100%;
+    left: 46%;
+    transform: translateX(-50%);
     position: relative;
-    right: 5%;
-        }
+    }
 
         #child {
             display: block;
@@ -114,16 +117,19 @@
         }  
 
         #buttonContainer {
-            width: 64%;
-    position: relative;
-    bottom: 63%;
-    right: -23%;
+       
+    width: 30%;
+    position: absolute;
+    bottom: 10%;
+    left: 27%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: row;
     gap: 18px;
     animation-name: slideInRight;
     animation-delay: 0.2s;
-}
+    }
+
 
         .button {
             opacity: 0;
@@ -215,17 +221,19 @@
             }
 
             .image, .image1 {
-                width: 100%;
-                left: 0;
-                margin-top: 0;
-            }
-
-            .backButton {
-                width: 5.8%;
-            }
-            .image1{
-            left: -8%;}
+            width: 100%;
+            left: 0;
+            margin-top: 0;
         }
+
+        .backButton {
+            width: 5.8%;
+        }
+
+        .image1 {
+            left: 0;
+        }
+    }
     </style>
 </head>
 <body>
