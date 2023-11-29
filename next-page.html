@@ -100,27 +100,29 @@
 
        /* ... (your existing styles) ... */
 
-@media only screen and (max-width: 768px) {
+       @media only screen and (max-width: 768px) {
     #logoTop, #logoBottom {
         max-width: 80%;
     }
 
     #buttonContainer {
-        margin-top: 41%;
-        grid-template-columns: 1fr; /* Display buttons vertically on smaller screens */
-        overflow-x: auto; /* Enable horizontal scrolling for the container */
-        white-space: nowrap; /* Prevent images from wrapping to the next line */
-        height: 145vh; /* Adjust the height as needed for proper scrolling */
+        margin-top: 0%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 57vh;
     }
 
     .imageLink {
-        margin-right: 20px; /* Add some spacing between images */
+        margin-right: 0; /* Remove spacing between images */
     }
 
     .imageLink img {
-        width: 51%;
+        width: 100%; /* Adjust image width to fill the container */
     }
 }
+
 
     </style>
 </head>

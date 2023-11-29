@@ -98,23 +98,19 @@
         }
 
         @media only screen and (max-width: 768px) {
-            body {
            
-            background-image: url('./newimage/BG.png');
-            
-        }
             #logoTop {
                 max-width: 80%;
             }
 
             #buttonContainer {
-                margin-top: 43%;
+                margin-top: 23%;
                 margin-bottom: -5%; /* Adjust the margin as needed */
-                grid-template-columns: 1fr; /* Display buttons vertically on smaller screens */
-            }
+                grid-template-columns: repeat(2, 1fr); /* Display buttons vertically on smaller screens */
+            } 
 
             .imageLink {
-                width: 85%; /* Adjust the width as needed for smaller screens */
+                width: 58%; /* Adjust the width as needed for smaller screens */
             }
             #backButton {
             top: 9px;
@@ -122,6 +118,19 @@
     cursor: pointer;
     padding: 20px
         }
+    }
+
+    @media only screen and (max-width: 480px) {
+        #buttonContainer {
+            margin-left: 17%;
+    margin-top: 59%;
+    margin-bottom: -5%;
+    grid-template-columns: repeat(2, 1fr);
+            } 
+            .imageLink {
+                width: 71%; /* Adjust the width as needed for smaller screens */
+            }
+
     }
     </style>
 </head>
@@ -134,26 +143,26 @@
             <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img01" src="./newimage/2000btn1.png" alt="Image 1">
             </div>
-            <div class="imageLink" onclick="goToPage('page2.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img02" src="./newimage/2000btn2.png" alt="Image 2">
             </div>
-            <div class="imageLink" onclick="goToPage('page3.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img03" src="./newimage/2000btn3.png" alt="Image 3">
             </div>
-            <div class="imageLink" onclick="goToPage('page4.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img04" src="./newimage/2000btn4.png" alt="Image 4">
             </div>
             <!-- Add four more image links as needed -->
-            <div class="imageLink" onclick="goToPage('page5.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img05" src="./newimage/4000btn1.png" alt="Image 5">
             </div>
-            <div class="imageLink" onclick="goToPage('page6.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img06" src="./newimage/4000btn2.png" alt="Image 6">
             </div>
-            <div class="imageLink" onclick="goToPage('page7.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img07" src="./newimage/4000btn3.png" alt="Image 7">
             </div>
-            <div class="imageLink" onclick="goToPage('page8.html')">
+            <div class="imageLink" onclick="goToPage('box1.html')">
                 <img id="img08" src="./newimage/4000btn4.png" alt="Image 8">
             </div>
         </div>
