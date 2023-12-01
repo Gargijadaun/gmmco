@@ -11,14 +11,13 @@
             width: 100%;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('./newimage/BG.png');
+            background-image: url('./images/BG.png');
             background-repeat: no-repeat;
             background-size: cover;
+            /* z-index: 10; */
         }
     
         .boxco {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             height: 100%;
             width: 100%;
             margin: 0;
@@ -43,19 +42,19 @@
             transform: scale(1.2);
         }
         .button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-        .button:hover img {
-            content: url('./images/btn.png');   
-        }
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.button:hover img {
+    content: url('./images/btn.png');   
+}
 
-        .button img {
-            width: 100%;
-            height: auto;
-        }
+.button img {
+    width: 100%;
+    height: auto;
+}
 
         .backButton {
             width: 2.8%;
@@ -71,108 +70,113 @@
             cursor: pointer;
         }
 
-        .image, .image1 {
-            
+        .image {
+            position: relative;
+            width: 33%;
+            left: 13%;
+            margin-top: -46%;
             animation-name: slideInUp;
         }
-
-        .image img, .image1 img {
+       
+        .image img {
             width: 100%;
             height: auto;
         }
 
-        .image {
-        height: 80%;
-        top: 12%;
-        width: 58%;
-        left: 27%;
-        /* transform: translateX(-50%); */
-        position: relative;
-    }
-
-    .image1 {
-        height: 100%;
-    top: 10%;
-    width: 100%;
-    left: -4%;
-    /* transform: translateX(-50%); */
+        .image1 {
+            position: absolute;
+    width: 48%;
+    left: 49.8%;
+    top: -9%;
+            animation-name: slideInRight;
+        }
+        /* .one {
+            height: 103%;
+    width: 172%;
     position: relative;
-    }
+    left: -663px;
+    bottom: -4%;
+        } */
+
+        .image1 img {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
 
         #child {
             display: block;
-            height: 103%;
-            width: 172%;
-            position: absolute;
-            left: -73.6%;
-            bottom: -5%;
-        }
+    height: 103%;
+    width: 172%;
+    position: absolute;
+    left: -73.6%;
+    bottom: -5%;
+}
 
-        #headin {
-            height: 7%;
-            width: 67%;
-            position: absolute;
-            left: 22%;
-            bottom: 72%;
-        }  
+
+#headin {
+   
+    height: 7%;
+    width: 67%;
+    position: absolute;
+    left: 22%;
+    bottom: 72%;
+}  
 
         #buttonContainer {
-            width: 62%;
-    position: relative;
-    bottom: 56%;
-    left: 55%;
-    transform: translateX(-50%);
+            width: 34%;
+    position: absolute;
+    bottom: 66%;
+    right: 6%;
     display: flex;
     flex-direction: row;
-    gap: 18px;
+    gap: 15px;
     animation-name: slideInRight;
     animation-delay: 0.2s;
+}
+        
+
+.button {
+    opacity: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+.button:hover{
+    content: url('./images/btn.png');   
+}
+.button img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
+    to {
+        opacity: 1;
+    }
+}
 
+/* Apply different animation delays to each button */
+.button:nth-child(1) {
+    animation-delay: 0.2s;
+}
 
-        .button {
-            opacity: 0;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
+.button:nth-child(2) {
+    animation-delay: 0.4s;
+}
 
-        .button:hover {
-            content: url('./images/btn.png');   
-        }
+.button:nth-child(3) {
+    animation-delay: 0.6s;
+}
 
-        .button img {
-            width: 100%;
-            height: auto;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Apply different animation delays to each button */
-        .button:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .button:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .button:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .button:nth-child(4) {
-            animation-delay: 0.8s;
-        } 
+.button:nth-child(4) {
+    animation-delay: 0.8s;
+} 
 
         .image-text {
             display: none;
@@ -214,49 +218,71 @@
             }
         }
 
-        @media only screen and (max-width: 768px) {
-            .boxco {
-                grid-template-columns: 1fr;
+        /* Media query for smaller screens (phones) */
+        @media (max-width: 480px) {
+            .image {
+                width: 76%;
+                left: 13%;
+                margin-top: 22%;
+            }
+            
+            .button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.button:hover #one{
+    content: url('./images/btn.png');   
+}
+.button img {
+    width: 100%;
+    height: auto;
+}
+
+            .backButton {
+                width: 20%;
             }
 
-            .image, .image1 {
-            width: 100%;
-            left: 0;
-            margin-top: 0;
-        }
+            .image1 {
+                margin-top: 293px;
+                width: 76%;
+                left: 13%;
+            }
 
-        .backButton {
-            width: 5.8%;
-        }
+            .image-text {
+                font-size: 16px;
+            }
 
-        .image1 {
-            left: 0;
+            #buttonContainer {
+                position: static;
+                text-align: center;
+                margin-top: 10px;
+            }
         }
-
-        #buttonContainer {
-            bottom: 8%;
-        }
-    }
     </style>
 </head>
 <body>
     <div class="boxco">
-       
+        <video id="video" autoplay loop muted>
+            <source src="./images/videohome.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="backButton" onclick="goBack()">
-            <img src="./newimage/back.png" alt="Back Button">
+            <img src="./images/Arrow.png" alt="Back Button">
         </div>
 
         <div class="image">
-            <img src="./newimage/Model.png" alt="Left Image">
+            <img src="./images/Group 11 (2).png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./newimage/description01.png" alt="Right Image" id="first">
-<!--             
-            <img src="./images/headin.png" alt="Image 2" id="headin">
-            <img src="./images/key.png" alt="Image 2" id="child"> -->
+            <img src="./images/box.png" alt="Right Image" id="first">
             
+            <img src="./images/headin.png" alt="Image 2" id="headin">
+            <img src="./images/key.png" alt="Image 2" id="child">
+          
         </div>
         <div id="buttonContainer">
             <button class="button" onclick="changeImage('./images/key.png')">
