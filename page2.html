@@ -62,7 +62,7 @@
             background-color: transparent;
             border: none;
             overflow: hidden;
-            background-image: url(./newimage/home.png);
+            background-image: url(./newimage/newback.png);
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -88,7 +88,7 @@
             background-color: transparent;
             border: none;
             overflow: hidden;
-            background-image: url(./newimage/newback.png);
+            background-image: url(./newimage/home.png);
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -124,10 +124,45 @@
             cursor: pointer;
             width: 228px; /* Adjust the width as needed for smaller buttons */
         }
-
-        .imageLink:hover {
-            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+        .button.clicked #img01 {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');   
         }
+        .button.clicked #img02 {
+            content: url('./newimage/chellakutty.png');  
+        }
+        .button.clicked #img03 {
+            content: url('./newimage/chellakutty1.png');   
+        }
+        .button.clicked #img04 {
+            content: url('./newimage/chellakutty2.png');     
+        }
+        .button.clicked #img05 {
+            content: url('./newimage/chellakutt3.png');  
+        }
+        .button.clicked #img06 {
+            content: url('./newimage/chellakutty4.png');   
+        }
+        #img01:hover {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');   
+        }
+        #img02:hover  {
+            content: url('./newimage/chellakutty.png');   
+        }
+      #img03:hover {
+            content: url('./newimage/chellakutty1.png');   
+        }
+        #img04:hover {
+            content: url('./newimage/chellakutty2.png');   
+        }
+        #img05:hover  {
+            content: url('./newimage/chellakutty3.png');   
+        }
+      #img06:hover {
+            content: url('./newimage/chellakutty4.png');   
+        }
+        /* .imageLink:hover {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+        } */
         /* .imageLink.clicked img {
             content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
         } */
@@ -174,9 +209,9 @@
         align-items: center;
     }
     
-    .imageLink.active {
+    /* .imageLink.active {
         content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
-    }
+    } */
         @media only screen and (max-width: 768px) {
             #buttonContainer {
                 margin-top: 14%;
@@ -218,8 +253,8 @@
 <body>
     <div id="container">
         <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
-        <button id="backButton" onclick="goToHome('next-page.html')"></button>
-        <button id="backButton01" onclick="goBack()"></button>
+        <button id="backButton01" onclick="goToHome('next-page.html')"></button>
+        <button id="backButton" onclick="goBack()"></button>
         <!-- <button id="back01" onclick="showPreviousGroup()"></button>
         <button id="next01" onclick="showNextGroup()"></button>
      -->
@@ -367,29 +402,28 @@
     </div>
     <!-- <input type="range" id="slider" min="0" max="300" step="1" value="0" oninput="updateGroupContainer()"> -->
     <div id="buttonContainer">
-        
         <!-- First row of buttons -->
-        <div class="imageLink" onclick="showGroupButtons('group1')">
+        <div class="imageLink" data-index="0" onclick="showGroupButtons('group1', 0)">
             <img id="img01" src="./newimage/Industrial_Engine_Menu_01.png" alt="Image 1">
         </div>
-        <div class="imageLink" onclick="showGroupButtons('group2')">
+        <!-- Add data-index attribute for the remaining buttons -->
+        <div class="imageLink" data-index="1" onclick="showGroupButtons('group2', 1)">
             <img id="img02" src="./newimage/Industrial_Engine_Menu_02.png" alt="Image 2">
         </div>
-        <div class="imageLink" onclick="showGroupButtons('group3')">
+        <div class="imageLink" data-index="2" onclick="showGroupButtons('group3', 2)">
             <img id="img03" src="./newimage/Industrial_Engine_Menu_03.png" alt="Image 3">
         </div>
-        <div class="imageLink" onclick="showGroupButtons('group4')">
+        <div class="imageLink" data-index="3" onclick="showGroupButtons('group4', 3)">
             <img id="img04" src="./newimage/Industrial_Engine_Menu_04.png" alt="Image 4">
         </div>
-        <div class="imageLink" onclick="showGroupButtons('group5')">
+        <div class="imageLink" data-index="4" onclick="showGroupButtons('group5', 4)">
             <img id="img05" src="./newimage/Industrial_Engine_Menu_05.png" alt="Image 5">
         </div>
-        <div class="imageLink" onclick="showGroupButtons('group6')">
+        <div class="imageLink" data-index="5" onclick="showGroupButtons('group6', 5)">
             <img id="img06" src="./newimage/Industrial_Engine_Menu_06.png" alt="Image 6">
         </div>
-      
     </div>
-   
+
 
     </div>
     <script>
@@ -407,64 +441,52 @@ function goBack() {
     window.history.back();
 }
 
+let lastClickedButton = null;
 
-    // Keep track of the last clicked button
-    let lastClickedButton = null;
+const buttonImages = [
+    { original: './newimage/Industrial_Engine_Menu_01.png', hover: './newimage/Industrial_Engine_Menu_01 (1)hov.png' },
+    { original: './newimage/Industrial_Engine_Menu_02.png', hover: './newimage/chellakutty.png' },
+    { original: './newimage/Industrial_Engine_Menu_03.png', hover: './newimage/chellakutty1.png' },
+    { original: './newimage/Industrial_Engine_Menu_04.png', hover: './newimage/chellakutty2.png' },
+    { original: './newimage/Industrial_Engine_Menu_05.png', hover: './newimage/chellakutty3.png' },
+    { original: './newimage/Industrial_Engine_Menu_06.png', hover: './newimage/chellakutty4.png' },
+];
 
-    // Map to store original image sources for each button
-    const originalImages = new Map();
-
-    // Function to reset styles and image source for a button
-    function resetButton(button) {
+function resetButtons() {
+    document.querySelectorAll('.imageLink.clicked').forEach(function (button) {
         const index = button.dataset.index;
-        const originalImage = originalImages.get(button);
+        const originalImage = buttonImages[index].original;
         button.querySelector('img').src = originalImage;
-    }
-
-    // Add click event listeners to each image link
-    document.querySelectorAll('.imageLink').forEach(function (button, index) {
-        // Store the original image source for each button
-        originalImages.set(button, `./newimage/Industrial_Engine_Menu_0${index + 1}.png`);
-
-        button.addEventListener('click', function () {
-            // Reset all other buttons to their last images
-            document.querySelectorAll('.imageLink').forEach(function (otherButton) {
-                if (otherButton !== button && otherButton.classList.contains('clicked')) {
-                    resetButton(otherButton);
-                }
-            });
-
-            // Set styles and update the image source for the clicked button
-            button.classList.add('clicked');
-            button.querySelector('img').src = `./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png`;
-
-            // Update the last clicked button
-            lastClickedButton = button;
-            lastClickedButton.dataset.index = index; // Store the index as a custom attribute
-        });
-
-        // Add mouseout event listener to reset image when not clicked
-        button.addEventListener('mouseout', function () {
-            // Reset the image source for the clicked button when not hovered
-            if (!button.classList.contains('clicked')) {
-                resetButton(button);
-            }
-        });
+        button.classList.remove('clicked');
     });
-  
-    
-        function showGroupButtons(groupId) {
-            // Hide all group containers
-            document.querySelectorAll('.groupButtonContainer').forEach(function(group) {
-                group.style.display = 'none';
-            });
+}
 
-            // Show the selected group container
-            document.getElementById(groupId).style.display = 'grid';
-        }
-    
-      
-      
+function updateButton(button, index) {
+    const hoverImage = buttonImages[index].hover;
+    button.classList.add('clicked');
+    button.querySelector('img').src = hoverImage;
+}
+
+document.querySelectorAll('.imageLink').forEach(function (button) {
+    button.addEventListener('click', function () {
+        resetButtons();
+        const index = button.dataset.index;
+        updateButton(button, index);
+    });
+});
+
+function showGroupButtons(groupId, index) {
+    document.querySelectorAll('.groupButtonContainer').forEach(function (group) {
+        group.style.display = 'none';
+    });
+
+    document.getElementById(groupId).style.display = 'grid';
+
+    // Reset all buttons and update the clicked button in the current group
+    resetButtons();
+    const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
+    updateButton(clickedButton, index);
+}
     </script>
     
     
