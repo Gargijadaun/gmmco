@@ -1,150 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gmmco</title>
     <style>
-      body {
+        body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('./images/BG.png'); /* Replace with your image URL */
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('./newimage/BG.png');
             background-repeat: no-repeat;
-            background-size: cover; /* Adjust to your preference */
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #container {
             display: grid;
+            grid-template-areas:
+                "topLogo topHeading"
+                "buttons buttons"
+                "slider slider" /* Adjusted grid areas for slider */
+                "groupButtonsContainer groupButtonsContainer"; /* Added a new row for group buttons */
+            grid-template-rows: auto 1fr auto auto; /* Adjusted grid rows */
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative; /* Added for absolute positioning */
+        }
+
+        #logoTop {
+            width: 100%;
+            max-width: 28%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5%;
+        }
+
+        .imageLink:hover,
+        #backButton:hover, #backButton01:hover {
+            transform: scale(1.2);
+        }
+        .groupButtonContainer button:hover {
+            transform: scale(1.2);
+        }
+        #backButton {
+            position: absolute;
+            top: 29px;
+            left: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/home.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #back01 {
+            position: absolute;
+            top: 274px;
+    left: 122px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/DirectionLeft.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #backButton01 {
+            position: absolute;
+            top: 29px;
+            right: 28px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/newback.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    #next01 {
+            position: absolute;
+            top: 274px;
+    right: 122px;
+            cursor: pointer;
+            padding: 26px;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            background-image: url(./newimage/DirectionRight.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #buttonContainer {
+            margin-right: -27%;
+            margin-left: -27%;
+            margin-bottom: -1%;
+            grid-area: buttons;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 21px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imageLink {
+            display: inline-block;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+            width: 228px; /* Adjust the width as needed for smaller buttons */
+        }
+
+        .imageLink:hover {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+        }
+        /* .imageLink.clicked img {
+            content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+        } */
+        .imageLink img {
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            border: 0;
+            transition: transform 0.3s;
+        }
+
+        .groupButtonContainer {
+            margin-top: 13%;
+    margin-left: 26%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* Display four buttons in one row */
+            gap: 200px;
+        }
+        /* .groupButtonsContainer {
+            margin-bottom: 14%;
+        } */
+
+        .groupButtonContainer button {
+            /* Add styling for your buttons as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            width: 100px; /* Adjust the width as needed for smaller buttons */
+            height: 46%;
+            background-color: transparent;
+        }
+
+        .groupButtonContainer button img {
+            width: 220px; /* Adjust the width of the image */
+            height: auto;
+           /* Add margin between image and text */
         }
 
 
-header {
-    color: rgb(7, 7, 146);
-    padding: 10px;
-    text-align: center;
-    text-size-adjust: 100%;
-    font-size: 150%;
-}
-
-footer {
-    color: #a79e9e;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    font-size: 170%;
-}
-
-#imageContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.image {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.image img {
-    width: 100%;
-    height: auto;
-}
-
-.image:hover {
-    transform: scale(1.2);
-}
-
-#backButton {
-    position: fixed;
-    top: 30px;
-    left: 10px;
-    cursor: pointer;
-}
-
-#backButton img {
-    width: 50px;
-    height: auto;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 480px) {
-    #imageContainer {
-        grid-template-columns: 1fr;
+        .center-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-}
+    
+    .imageLink.active {
+        content: url('./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png');
+    }
+        @media only screen and (max-width: 768px) {
+            #buttonContainer {
+                margin-top: 14%;
+    margin-right: 3%;
+    margin-left: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+            }
+
+            .imageLink {
+                width: 28%; /* Adjust as needed */
+                margin: 5px; /* Add some margin between buttons */
+            }
+
+            #groupButtonsContainer {
+                width: 10%;
+            }
+            .groupButtonContainer {
+                grid-template-rows: 1fr;
+                gap: 10px;
+            }
+
+            .groupButtonContainer button {
+                width: 100%;
+            } 
+
+            .groupButtonContainer button img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+
+            }
+        
     </style>
 </head>
+
 <body>
-    <header>
-        <h1>Industrial Engine Range</h1>
-        <div id="backButton" onclick="goBack()">
-            <img src="./images/back.png" alt="Back Button">
+    <div id="container">
+        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        <button id="backButton" onclick="goToHome('next-page.html')"></button>
+        <button id="backButton01" onclick="goBack()"></button>
+        <!-- <button id="back01" onclick="showPreviousGroup()"></button>
+        <button id="next01" onclick="showNextGroup()"></button>
+     -->
+        <div id="groupButtonsContainer" class="center-row">
+            <!-- Hidden second row of buttons initially -->
+            <div id="group1" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_150.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box2.html')">
+                    <img src="./newimage/Menu_250.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box3.html')">
+                    <img src="./newimage/Menu_350.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box4.html')">
+                    <img src="./newimage/Menu_450.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box5.html')">
+                    <img src="./newimage/Menu_550.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group7" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group8" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_102.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group2" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group3" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group4" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group5" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_102.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+            </div>
+            <div id="group6" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_102.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+            </div>
+           
+        
+       
+    </div>
+    <!-- <input type="range" id="slider" min="0" max="300" step="1" value="0" oninput="updateGroupContainer()"> -->
+    <div id="buttonContainer">
+        
+        <!-- First row of buttons -->
+        <div class="imageLink" onclick="showGroupButtons('group1')">
+            <img id="img01" src="./newimage/Industrial_Engine_Menu_01.png" alt="Image 1">
         </div>
-    </header>
-    <!-- width: 200px; -->
-    <div id="imageContainer">
-        <!-- Add more images as needed -->
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/01.jpg" alt="Image 1">
+        <div class="imageLink" onclick="showGroupButtons('group2')">
+            <img id="img02" src="./newimage/Industrial_Engine_Menu_02.png" alt="Image 2">
         </div>
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/02.jpg" alt="Image 1">
+        <div class="imageLink" onclick="showGroupButtons('group3')">
+            <img id="img03" src="./newimage/Industrial_Engine_Menu_03.png" alt="Image 3">
         </div>
-        <div class="image" style="top: -6%; left: 22%;width: 50%;">
-            <img src="./images/02.jpg" alt="Image 2">
+        <div class="imageLink" onclick="showGroupButtons('group4')">
+            <img id="img04" src="./newimage/Industrial_Engine_Menu_04.png" alt="Image 4">
         </div>
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/01.jpg" alt="Image 1">
+        <div class="imageLink" onclick="showGroupButtons('group5')">
+            <img id="img05" src="./newimage/Industrial_Engine_Menu_05.png" alt="Image 5">
         </div>
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/02.jpg" alt="Image 2">
-        </div>
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/01.jpg" alt="Image 1">
-        </div> 
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/02.jpg" alt="Image 2">
-        </div>
-        <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/01.jpg" alt="Image 1">
-        </div>
-      <div class="image" style="top: -6%; left: 22%; width: 50%;">
-            <img src="./images/02.jpg" alt="Image 2">
+        <div class="imageLink" onclick="showGroupButtons('group6')">
+            <img id="img06" src="./newimage/Industrial_Engine_Menu_06.png" alt="Image 6">
         </div>
       
     </div>
-    <footer>
-        <p>Lesser Regulated Countries</p>
-    </footer>
+   
+
+    </div>
     <script>
-         function goBack() {
-            window.history.back();
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get all elements with the class 'image'
-            var images = document.querySelectorAll('.image');
-            // Mapping of image indices to corresponding page URLs
-            var pageUrls = [
-                'image1.html',
-                'image2.html',
-                'image3.html',
-                'image4.html',
-                'image5.html',
-                'image6.html',             
-                'image7.html',
-                'image8.html',
-                'image9.html',     
-            ];
-            // Add click event listener to each image
-            images.forEach(function (image, index) {
-                image.addEventListener('click', function () {
-                    // Redirect to the corresponding page
-                    window.location.href = pageUrls[index];
-                });
+
+
+function goToPage(page) {
+    window.location.href = page;
+}
+
+function goToHome(page) {
+    window.location.href = page;
+}
+
+function goBack() {
+    window.history.back();
+}
+
+
+    // Keep track of the last clicked button
+    let lastClickedButton = null;
+
+    // Map to store original image sources for each button
+    const originalImages = new Map();
+
+    // Function to reset styles and image source for a button
+    function resetButton(button) {
+        const index = button.dataset.index;
+        const originalImage = originalImages.get(button);
+        button.querySelector('img').src = originalImage;
+    }
+
+    // Add click event listeners to each image link
+    document.querySelectorAll('.imageLink').forEach(function (button, index) {
+        // Store the original image source for each button
+        originalImages.set(button, `./newimage/Industrial_Engine_Menu_0${index + 1}.png`);
+
+        button.addEventListener('click', function () {
+            // Reset all other buttons to their last images
+            document.querySelectorAll('.imageLink').forEach(function (otherButton) {
+                if (otherButton !== button && otherButton.classList.contains('clicked')) {
+                    resetButton(otherButton);
+                }
             });
+
+            // Set styles and update the image source for the clicked button
+            button.classList.add('clicked');
+            button.querySelector('img').src = `./newimage/Industrial_Engine_Menu_01\ \(1\)hov.png`;
+
+            // Update the last clicked button
+            lastClickedButton = button;
+            lastClickedButton.dataset.index = index; // Store the index as a custom attribute
         });
+
+        // Add mouseout event listener to reset image when not clicked
+        button.addEventListener('mouseout', function () {
+            // Reset the image source for the clicked button when not hovered
+            if (!button.classList.contains('clicked')) {
+                resetButton(button);
+            }
+        });
+    });
+  
+    
+        function showGroupButtons(groupId) {
+            // Hide all group containers
+            document.querySelectorAll('.groupButtonContainer').forEach(function(group) {
+                group.style.display = 'none';
+            });
+
+            // Show the selected group container
+            document.getElementById(groupId).style.display = 'grid';
+        }
+    
+      
+      
     </script>
+    
+    
+    
+
+    
 </body>
+
 </html>
