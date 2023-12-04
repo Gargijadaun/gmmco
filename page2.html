@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-            background-image: url('./newimage/BG.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            text-align: center;
-            overflow: hidden;
-        }
+       html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('./newimage/BG.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
 
         #container {
             display: grid;
@@ -67,18 +69,35 @@
             background-size: cover;
         }
         #back01 {
-            position: absolute;
-            top: 274px;
+    display: none;
+    position: absolute;
+    top: 274px;
     left: 122px;
-            cursor: pointer;
-            padding: 26px;
-            background-color: transparent;
-            border: none;
-            overflow: hidden;
-            background-image: url(./newimage/DirectionLeft.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+    cursor: pointer;
+    padding: 26px;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    background-image: url(./newimage/DirectionLeft.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#next01 {
+    display: none;
+    position: absolute;
+    top: 274px;
+    right: 122px;
+    cursor: pointer;
+    padding: 26px;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    background-image: url(./newimage/DirectionRight.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
         #backButton01 {
             position: absolute;
             top: 29px;
@@ -92,19 +111,7 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-    #next01 {
-            position: absolute;
-            top: 274px;
-    right: 122px;
-            cursor: pointer;
-            padding: 26px;
-            background-color: transparent;
-            border: none;
-            overflow: hidden;
-            background-image: url(./newimage/DirectionRight.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+  
         #buttonContainer {
             margin-right: -27%;
             margin-left: -27%;
@@ -228,7 +235,9 @@
             }
 
             #groupButtonsContainer {
-                width: 10%;
+                width: 179%;
+    margin-left: -26%;
+    margin-top: 37%;
             }
             .groupButtonContainer {
                 grid-template-rows: 1fr;
@@ -246,7 +255,18 @@
 
 
             }
-        
+            @media only screen and (max-width: 480px) {
+#back01{
+    top: 255px;
+    left: 202px;
+
+}
+#next01{
+    top: 658px;
+    right: 195px;
+
+}
+}   
     </style>
 </head>
 
@@ -255,9 +275,10 @@
         <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
         <button id="backButton01" onclick="goToHome('next-page.html')"></button>
         <button id="backButton" onclick="goBack()"></button>
-        <!-- <button id="back01" onclick="showPreviousGroup()"></button>
+        <button id="back01" onclick="showPreviousGroup()"></button>
         <button id="next01" onclick="showNextGroup()"></button>
-     -->
+        
+    
         <div id="groupButtonsContainer" class="center-row">
             <!-- Hidden second row of buttons initially -->
             <div id="group1" class="groupButtonContainer" style="display: none;">
@@ -276,8 +297,6 @@
                 <button onclick="goToPage('box5.html')">
                     <img src="./newimage/Menu_550.png" alt="Icon 1">
                 </button>
-            </div>
-            <div id="group7" class="groupButtonContainer" style="display: none;">
                 <button onclick="goToPage('box1.html')">
                     <img src="./newimage/Menu_302.png" alt="Icon 1">
                 </button>
@@ -294,23 +313,7 @@
                     <img src="./newimage/Menu_302.png" alt="Icon 1">
                 </button>
             </div>
-            <div id="group8" class="groupButtonContainer" style="display: none;">
-                <button onclick="goToPage('box1.html')">
-                    <img src="./newimage/Menu_102.png" alt="Icon 1">
-                </button>
-                <button onclick="goToPage('box1.html')">
-                    <img src="./newimage/Menu_202.png" alt="Icon 1">
-                </button>
-                <button onclick="goToPage('box1.html')">
-                    <img src="./newimage/Menu_302.png" alt="Icon 1">
-                </button>
-                <button onclick="goToPage('box1.html')">
-                    <img src="./newimage/Menu_302.png" alt="Icon 1">
-                </button>
-                <button onclick="goToPage('box1.html')">
-                    <img src="./newimage/Menu_302.png" alt="Icon 1">
-                </button>
-            </div>
+           
             <div id="group2" class="groupButtonContainer" style="display: none;">
                 <button onclick="goToPage('box1.html')">
                     <img src="./newimage/Menu_302.png" alt="Icon 1">
@@ -327,8 +330,38 @@
                 <button onclick="goToPage('box1.html')">
                     <img src="./newimage/Menu_402.png" alt="Icon 1">
                 </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_102.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
             </div>
             <div id="group3" class="groupButtonContainer" style="display: none;">
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
                 <button onclick="goToPage('box1.html')">
                     <img src="./newimage/Menu_302.png" alt="Icon 1">
                 </button>
@@ -354,6 +387,42 @@
                 </button>
                 <button onclick="goToPage('box1.html')">
                     <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_102.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_302.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_202.png" alt="Icon 1">
+                </button>
+                <button onclick="goToPage('box1.html')">
+                    <img src="./newimage/Menu_402.png" alt="Icon 1">
                 </button>
                 <button onclick="goToPage('box1.html')">
                     <img src="./newimage/Menu_202.png" alt="Icon 1">
@@ -428,6 +497,58 @@
     </div>
     <script>
 
+     
+
+let currentGroup = 1; // Variable to track the current group
+    const buttonsPerPage = 5; // Number of buttons to show per page
+    let currentPage = 1; // Variable to track the current page within a group
+
+    function showNextGroup() {
+        if (currentPage < Math.ceil(totalButtonsInGroup(currentGroup) / buttonsPerPage)) {
+            currentPage++;
+            updateGroupContainer();
+        }
+    }
+
+    function showPreviousGroup() {
+        if (currentPage > 1) {
+            currentPage--;
+            updateGroupContainer();
+        }
+    }
+
+    function totalButtonsInGroup(group) {
+        return document.getElementById(`group${group}`).querySelectorAll('button').length;
+    }
+
+    function updateGroupContainer() {
+        // Hide all buttons in the current group
+        document.getElementById(`group${currentGroup}`).querySelectorAll('button').forEach(button => {
+            button.style.display = 'none';
+        });
+
+        // Calculate the range of buttons to display on the current page
+        const start = (currentPage - 1) * buttonsPerPage;
+        const end = start + buttonsPerPage;
+
+        // Show the buttons within the specified range
+        document.getElementById(`group${currentGroup}`).querySelectorAll('button').forEach((button, index) => {
+            if (index >= start && index < end) {
+                button.style.display = 'block';
+            }
+        });
+
+        // Reset all buttons and update the clicked button in the current group
+        resetButtons();
+        const index = currentGroup - 1; // Adjust index as arrays are zero-based
+        const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
+        updateButton(clickedButton, index);
+    }
+
+    // Show the first page of buttons when the page loads
+    window.addEventListener('load', function () {
+        updateGroupContainer();
+    });
 
 function goToPage(page) {
     window.location.href = page;
@@ -475,18 +596,32 @@ document.querySelectorAll('.imageLink').forEach(function (button) {
     });
 });
 
+Back01 = document.getElementById("back01");
+Next01 = document.getElementById("next01");
 function showGroupButtons(groupId, index) {
-    document.querySelectorAll('.groupButtonContainer').forEach(function (group) {
-        group.style.display = 'none';
-    });
+            document.querySelectorAll('.groupButtonContainer').forEach(function (group) {
+                group.style.display = 'none';
+                Back01.style.display = 'block';
+                Next01.style.display = 'block';
 
-    document.getElementById(groupId).style.display = 'grid';
+            });
 
-    // Reset all buttons and update the clicked button in the current group
-    resetButtons();
-    const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
-    updateButton(clickedButton, index);
-}
+            document.getElementById(groupId).style.display = 'grid';
+
+            // Reset all buttons and update the clicked button in the current group
+            resetButtons();
+            const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
+            updateButton(clickedButton, index);
+
+            // Update the current group to match the selected button
+            currentGroup = index + 1;
+            currentPage = 1;
+
+            // Show the buttons in the selected group
+            updateGroupContainer();
+        }
+
+ 
     </script>
     
     
