@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,8 @@
             align-items: center;
             width: 100%;
             height: 100%;
-            position: relative; /* Added for absolute positioning */
+            position: relative;
+            /* Added for absolute positioning */
         }
 
         #logoTop {
@@ -43,16 +45,18 @@
             top: 5%;
         }
 
-       
-       
+
+
 
         #buttonContainer {
             margin-right: 10%;
             margin-left: 22%;
-            margin-bottom: -13%; /* Adjust the margin as needed */
+            margin-bottom: -17%;
+            /* Adjust the margin as needed */
             grid-area: buttons;
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Eight buttons, adjust as needed */
+            grid-template-columns: repeat(4, 1fr);
+            /* Eight buttons, adjust as needed */
             gap: 20px;
             justify-content: center;
             align-items: center;
@@ -65,8 +69,8 @@
             border-top-right-radius: 30px;
             border-bottom-left-radius: 30px;
             cursor: pointer;
-            margin-bottom: 52px; /* Adjust the margin as needed */
-            width: 96%; /* Adjust the width as needed */
+            margin-bottom: 117px;
+            width: 82%;
         }
 
         .imageLink img {
@@ -79,7 +83,9 @@
             transition: transform 0.3s;
         }
 
-        .imageLink:hover, #backButton:hover, #backButton01:hover {
+        .imageLink:hover,
+        #backButton:hover,
+        #backButton01:hover {
             transform: scale(1.2);
         }
 
@@ -96,6 +102,7 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
         #backButton01 {
             position: absolute;
             top: 29px;
@@ -111,64 +118,69 @@
         }
 
         @media only screen and (max-width: 768px) {
-           
+
             #logoTop {
                 max-width: 80%;
             }
 
-          
-        #buttonContainer {
-            margin-right: -6%;
-    margin-left: 2%;
-    margin-bottom: -95%;
-    grid-area: buttons;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0%;
-    justify-content: center;
-    align-items: center;
-        }
 
-        .imageLink {
-            display: inline-block;
-            overflow: hidden;
-            transition: transform 0.3s;
-            border-top-right-radius: 30px;
-            border-bottom-left-radius: 30px;
-            cursor: pointer;
-            margin-bottom: 194%; /* Adjust the margin as needed */
-            width: 73%; /* Adjust the width as needed */
-        }
-
-            #backButton {
-            top: 18px;
-    right: 11px;
-    cursor: pointer;
-    padding: 20px
-        }
-        #backButton01 {
-            top: 18px;
-    left: 11px;
-    cursor: pointer;
-    padding: 20px
-        }
-    }
-
-    @media only screen and (max-width: 480px) {
-        #buttonContainer {
-            margin-left: 15%;
-    margin-top: -4%;
-    margin-bottom: -62%;
-    grid-template-columns: repeat(2, 1fr);
-            } 
-            .imageLink {
-                margin-bottom: 23%;
-    width: 49%;
+            #buttonContainer {
+                margin-right: -6%;
+                margin-left: 2%;
+                margin-bottom: -95%;
+                grid-area: buttons;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0%;
+                justify-content: center;
+                align-items: center;
             }
 
-    }
+            .imageLink {
+                display: inline-block;
+                overflow: hidden;
+                transition: transform 0.3s;
+                border-top-right-radius: 30px;
+                border-bottom-left-radius: 30px;
+                cursor: pointer;
+                margin-bottom: 194%;
+                /* Adjust the margin as needed */
+                width: 73%;
+                /* Adjust the width as needed */
+            }
+
+            #backButton {
+                top: 18px;
+                right: 11px;
+                cursor: pointer;
+                padding: 20px
+            }
+
+            #backButton01 {
+                top: 18px;
+                left: 11px;
+                cursor: pointer;
+                padding: 20px
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #buttonContainer {
+                margin-left: 15%;
+                margin-top: -4%;
+                margin-bottom: -62%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .imageLink {
+                margin-bottom: 23%;
+                width: 49%;
+            }
+
+        }
     </style>
 </head>
+
 <body>
     <div id="container">
         <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
@@ -207,7 +219,7 @@
         function goToPage(page) {
             window.location.href = page;
         }
-        
+
         function goToHome(page) {
             window.location.href = page;
         }
@@ -217,4 +229,5 @@
         }
     </script>
 </body>
+
 </html>
