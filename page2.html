@@ -612,7 +612,7 @@
             // Reset all buttons and update the clicked button in the current group
             resetButtons();
             const index = currentGroup - 1; // Adjust index as arrays are zero-based
-            const clickedButton = document.querySelector(`.imageLink[data-index="${index-1}"]`);
+            const clickedButton = document.querySelector(`.imageLink[data-index="${index}"]`);
             updateButton(clickedButton, index);
         }
 
