@@ -14,6 +14,7 @@
             background-image: url('./newimage/BG.png');
             background-repeat: no-repeat;
             background-size: cover;
+            overflow: hidden; 
         }
     
         .boxco {
@@ -27,12 +28,23 @@
             background-size: cover; */
         }
          .button.clicked #img01 {
-            content: url('./newimage/frame2/T1hov.png');
+            content: url('./newimage/frame3/T4hov.png');   
         }
         .button.clicked #img02 {
-            content: url('./newimage/frame2/T1hov.png');
+            content: url('./newimage/frame3/T5hov.png');   
         }
-       
+        .button.clicked #img03 {
+            content: url('./newimage/frame3/T6hov.png');   
+        }
+        .button.clicked #img04 {
+            content: url('./newimage/frame3/T7hov.png');   
+        }
+        .button.clicked #img05 {
+            content: url('./newimage/frame3/T8hov.png');   
+        }
+        .button.clicked #img06 {
+            content: url('./newimage/frame3/T9hov.png');   
+        }
         #video {
             position: relative;
             opacity: 0.2;
@@ -56,13 +68,23 @@
             padding: 0;
         }
         #img01:hover {
-            content: url('./newimage/frame2/T1.png');   
+            content: url('./newimage/frame3/T4hov.png');   
         }
         #img02:hover  {
-            content: url('./newimage/frame2/T1hov.png');   
+            content: url('./newimage/frame3/T5hov.png');   
         }
-     
-
+      #img03:hover {
+            content: url('./newimage/frame3/T6hov.png');   
+        }
+        #img04:hover {
+            content: url('./newimage/frame3/T7hov.png');   
+        }
+        #img05:hover  {
+            content: url('./newimage/frame3/T8hov.png');   
+        }
+      #img06:hover {
+            content: url('./newimage/frame3/T9hov.png');   
+        }
         .button img {
             width: 100%;
             height: auto;
@@ -116,13 +138,46 @@
 
     .image1 {
         height: 100%;
-    top: 25%;
+    top: 17%;
     width: 85%;
     left: 0%;
     /* transform: translateX(-50%); */
     position: relative;
     }
+    #img01 {
+       
+        margin-left: -4%;
+    
+    }
+    #img02 {
+       
+       margin-left: 2%;
+   
+   }
+   #img03 {
+       
+       margin-left: 8%;
+   
+   }
+   #img04 {
+       
+       margin-left: 14%;
+   
+   }
+    #img06{
+        margin-left: -49%;
+        margin-top: -37%;
+    width: 54%;
+    margin-bottom: 4%;
+   
+    }
+    #img05{
+        margin-right: -49%;
+margin-top: -37%;
+width: 54%;
+margin-bottom: 4%;
 
+}
         #child {
             display: block;
             height: 103%;
@@ -139,20 +194,31 @@
             left: 22%;
             bottom: 72%;
         }  
-
         #buttonContainer {
-            height: 58%;
-    width: 35%;
+            height: auto;
+    width: 63%;
     position: relative;
-    bottom: 12%;
-    left: 32%;
-   
+    bottom: 7%;
+    left: 27%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap: 18px;
+    justify-content: space-between;
+    align-items: center;
     animation-name: slideInRight;
     animation-delay: 0.2s;
-    }
+}
+
+.button-row {
+    width: 78%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px; /* Adjust the margin between rows */
+}
+.button {
+    flex-basis: calc(50% - 9px); /* Adjust the width of each button based on your design */
+    width: 100%; /* Set a fixed width for all buttons */
+}
     #logoTop {
        
         transform: rotate(-90deg);
@@ -282,6 +348,11 @@
         #logoTop {
             top: 21%;
         }
+        .button {
+        flex-basis: calc(100% - 9px); /* Full width for buttons on smaller screens */
+        margin-bottom: 18px; /* Adjust the margin between buttons */
+    }
+
     }
     
     @media only screen and (max-width: 480px) {
@@ -318,30 +389,46 @@
         </div>
        
         <div class="image">
-            <img src="./newimage/frame2/left_image01.png" alt="Left Image">
+            <img src="./newimage/frame3/Left_image04.png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./newimage/frame2/content01.png" alt="Right Image" id="first">
+            <img src="./newimage/frame3/content04.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
             
         </div>
         <div id="buttonContainer">
+            <div class="button-row">
+                <button class="button button1" onclick="changeImage('./newimage/frame3/content04.png', this)">
+                    <img class="0ne" id="img01" src="/newimage/frame3/T4hov.png" alt="Button 3 Image">
+                </button>
+                <button class="button button2" onclick="changeImage('./newimage/frame3/content04_1.png', this)">
+                    <img class="0ne" id="img02" src="/newimage/frame3/T5.png" alt="Button 4 Image">
+                </button>
+                <button class="button button3" onclick="changeImage('./newimage/frame3/content04_2.png', this)">
+                    <img class="0ne" id="img03" src="/newimage/frame3/T6.png" alt="Button 5 Image">
+                </button>
+                <button class="button button4" onclick="changeImage('./newimage/frame3/content04_3.png', this)">
+                    <img class="0ne"  id="img04" src="/newimage/frame3/T7.png" alt="Button 6 Image">
+                </button>
+            </div>
            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
-           <button class="button button1" onclick="changeImage('./newimage/frame2/content01.png', this)">
-            <img class="0ne" id="img01" src="./newimage/frame2/T1hov.png" alt="Button 1 Image">
-        </button>
-        <button class="button button2" onclick="changeImage('./newimage/frame2/content01_1.png', this)">
-            <img class="0ne"  id="img02" src="./newimage/frame2/T1.png" alt="Button 2 Image">
-        </button>
-     
-        
-
-
+           <div class="button-row">
+            <button class="button button5" onclick="changeImage('./newimage/frame3/content04_4.png', this)">
+                <img id="img05" src="/newimage/frame3/T8.png" alt="Button 1 Image">
+            </button>
+            <button class="button button6" onclick="changeImage('./newimage/frame3/content04_5.png', this)">
+                <img id="img06" src="/newimage/frame3/T9.png" alt="Button 2 Image">
+            </button>
         </div>
+        <!-- 4 buttons in the second row -->
+       
+      
+        </div>
+       
     </div>
    <!-- ... Your existing HTML code ... -->
 
@@ -350,15 +437,21 @@
 <script>
     // Define arrays for original and hover images
     var originalImages = [
-        './newimage/frame2/T1.png',
-        './newimage/frame2/T1.png',
-       
+        '/newimage/frame3/T4.png',
+        '/newimage/frame3/T5.png',
+        '/newimage/frame3/T6.png',
+        '/newimage/frame3/T7.png',
+        '/newimage/frame3/T8.png',
+        '/newimage/frame3/T9.png'
     ];
 
     var hoverImages = [
-        './newimage/frame2/T1hov.png',
-        './newimage/frame2/T1hov.png',
-       
+    '/newimage/frame3/T4hov.png',
+        '/newimage/frame3/T5hov.png',
+        '/newimage/frame3/T6hov.png',
+        '/newimage/frame3/T7hov.png',
+        '/newimage/frame3/T8hov.png',
+        '/newimage/frame3/T9hov.png'
     ];
 
     function changeText(newText) {
@@ -375,30 +468,26 @@
     }
 
     function changeImage(newSource, button) {
-    var imageElement = document.getElementById('first');
-    imageElement.src = newSource;
+        var imageElement = document.getElementById('first');
+        imageElement.src = newSource;
 
-    // Remove 'clicked' class from all buttons
-    var buttons = document.querySelectorAll('.button');
-    buttons.forEach(function (btn) {
-        btn.classList.remove('clicked');
-
-        // Change the image of the other buttons to the original image
-        if (btn !== button) {
-            var otherButtonImage = btn.querySelector('img');
-            otherButtonImage.src = './newimage/frame2/T1.png';
+        // If the clicked button is the second or third button, change the image of the first button
+        if (button.classList.contains('button2') || button.classList.contains('button3') || button.classList.contains('button4') || button.classList.contains('button5') || button.classList.contains('button6')) {
+            var firstButton = document.querySelector('.button1');
+            firstButton.classList.add('clicked');
+            var firstImage = document.getElementById('img01');
+            firstImage.src = originalImages[0];
         }
-    });
 
-    // Add 'clicked' class to the clicked button
-    button.classList.add('clicked');
+        // Remove 'clicked' class from all buttons
+        var buttons = document.querySelectorAll('.button');
+        buttons.forEach(function (btn) {
+            btn.classList.remove('clicked');
+        });
 
-    // Change the image of the clicked button to the hover image
-    var buttonImage = button.querySelector('img');
-    buttonImage.src = './newimage/frame2/T1hov.png';
-}
-
-
+        // Add 'clicked' class to the clicked button
+        button.classList.add('clicked');
+    }
 </script>
 
 
