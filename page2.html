@@ -90,6 +90,7 @@
             background-image: url(./newimage/DirectionLeft.png);
             background-repeat: no-repeat;
             background-size: cover;
+            animation: slideFromTop 0.5s ease-in-out;
         }
 
         #next01 {
@@ -105,8 +106,25 @@
             background-image: url(./newimage/DirectionRight.png);
             background-repeat: no-repeat;
             background-size: cover;
+            animation: slideFromTop 0.5s ease-in-out;
         }
+        @keyframes slideFromBottom {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
 
+    @keyframes slideFromTop {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
         #backButton01 {
             position: absolute;
             top: 29px;
@@ -131,6 +149,7 @@
             gap: 21px;
             justify-content: center;
             align-items: center;
+            animation: slideFromBottom 0.5s ease-in-out;
         }
 
         .imageLink {
@@ -211,6 +230,7 @@
             grid-template-columns: repeat(5, 1fr);
             /* Display four buttons in one row */
             gap: 200px;
+            animation: slideFromTop 0.5s ease-in-out;
         }
 
         /* .groupButtonsContainer {
@@ -656,6 +676,8 @@
 
     // Show the first page of buttons when the page loads
     window.addEventListener('load', function () {
+        showGroupButtons('group1', 0);
+
         // Reset all buttons when the page loads
         resetButtons();
         updateGroupContainer();
