@@ -216,7 +216,7 @@ body {
     <div id="container">
       
         <button id="backButton01" onclick="goBack()"></button>
-        <button id="backButton" onclick="goToHome('next-page.html')"></button>
+        <button id="backButton" onclick="goToHome('index.html')"></button>
         <div id="buttonContainer">
             <div class="imageLink" >
                 <img id="img01" src="./newimage/serviceimage/01_content.png" alt="Image 1">
@@ -250,6 +250,18 @@ body {
             // Implement the functionality to go back as needed
             window.history.back();
         }
+        function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 30000;
+
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
     </script>
 </body>
 

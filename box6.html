@@ -313,7 +313,7 @@
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
-        <div class="backButton"  onclick="goToHome('next-page.html')">
+        <div class="backButton"  onclick="goToHome('index.html')">
             <img src="./newimage/home.png" alt="Back Button">
         </div>
        
@@ -398,7 +398,18 @@
     buttonImage.src = './newimage/frame2/T1hov.png';
 }
 
+function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 30000;
 
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
 </script>
 
 

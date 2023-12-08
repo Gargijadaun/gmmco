@@ -325,7 +325,7 @@
 <body>
     <div id="container">
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
-        <button id="backButton01" onclick="goToHome('next-page.html')"></button>
+        <button id="backButton01" onclick="goToHome('index.html')"></button>
         <button id="backButton" onclick="goBack()"></button>
         <button id="back01" onclick="showPreviousGroup()"></button>
         <button id="next01" onclick="showNextGroup()"></button>
@@ -721,7 +721,18 @@
             updateGroupContainer();
         }
 
+        function autoRedirect() {
+        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+        const timeoutDuration = 30000;
 
+        setTimeout(() => {
+            // Specify the default page to redirect to
+            goToPage('index.html');
+        }, timeoutDuration);
+    }
+
+    // Call the autoRedirect function when the page loads
+    window.onload = autoRedirect;
     </script>
 
 
