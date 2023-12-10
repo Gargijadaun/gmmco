@@ -26,7 +26,55 @@
             background-repeat: no-repeat;
             background-size: cover; */
         }
-        
+        .button.clicked #img01 {
+            content: url('./newimage/industrialengine/menu1/six/T1hov.png');  
+        }
+        .button.clicked #img02 {
+            content: url('./newimage/industrialengine/menu1/six/T2hov.png'); 
+        }
+        .button.clicked #img03 {
+            content: url('./newimage/industrialengine/menu1/six/T3hov.png');
+        }
+        .button.clicked #img04 {
+            content: url('./newimage/industrialengine/menu1/six/T4hov.png');
+        }
+        .button.clicked #img05 {
+            content: url('./newimage/industrialengine/menu1/six/T5hov.png');
+        }
+        .button.clicked #img06 {
+            content: url('./newimage/industrialengine/menu1/six/T6hov.png');
+        }
+        .button.clicked #img07 {
+            content: url('./newimage/industrialengine/menu1/six/T7hov.png');
+        }
+        .button.clicked #img08 {
+            content: url('./newimage/industrialengine/menu1/six/T8hov.png');
+        }
+
+        #img01:hover {
+            content: url('./newimage/industrialengine/menu1/six/T1hov.png');  
+        }
+        #img02:hover  {
+            content: url('./newimage/industrialengine/menu1/six/T2hov.png'); 
+        }
+      #img03:hover {
+        content: url('./newimage/industrialengine/menu1/six/T3hov.png');
+        }
+        #img04:hover {
+            content: url('./newimage/industrialengine/menu1/six/T4hov.png');
+        }
+        #img05:hover {
+            content: url('./newimage/industrialengine/menu1/six/T5hov.png');  
+        }
+        #img06:hover  {
+            content: url('./newimage/industrialengine/menu1/six/T6hov.png'); 
+        }
+      #img07:hover {
+        content: url('./newimage/industrialengine/menu1/six/T7hov.png');
+        }
+        #img08:hover {
+            content: url('./newimage/industrialengine/menu1/six/T8hov.png');
+        }
         #video {
             position: relative;
             opacity: 0.2;
@@ -99,8 +147,19 @@
     /* transform: translateX(-50%); */
     position: relative;
     }
-
-      
+/* 
+    #buttonContainer {
+            height: 58%;
+    width: 50%;
+    position: relative;
+    bottom: 21%;
+    left: 27%;
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    animation-name: slideInRight;
+    animation-delay: 0.2s;
+    } */
     #logoTop {
        
         transform: rotate(-90deg);
@@ -112,7 +171,33 @@
     /* transform: translateX(-50%); */
    
         }
+        #buttonContainer {
+            position: fixed;
+    top: 136px;
+    right: 65px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 1;
 
+}
+
+
+.button img {
+    width: 97.41px; /* Adjust the width as needed */
+    height: 39.46px; /* Adjust the height as needed */
+}
+
+
+        .button {
+            opacity: 1;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+          
+        }
         #logoTop {
             top: 39%;
         }
@@ -211,6 +296,35 @@
 </head>
 <body>
     <div class="boxco">
+        <div id="buttonContainer">
+            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
+            <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/six/content01.png', this)">
+             <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/six/T1hov.png" alt="Button 1 Image">
+         </button>
+         <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/six/Content02.png', this)">
+             <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/six/T2.png" alt="Button 2 Image">
+         </button>
+         <button class="button button3" onclick="changeImage('./newimage/industrialengine/menu1/six/content03.png', this)">
+             <img class="0ne" id="img03" src="./newimage/industrialengine/menu1/six/T3.png" alt="Button 3 Image">
+         </button>
+         <button class="button button4" onclick="changeImage('./newimage/industrialengine/menu1/six/content04.png', this)">
+             <img class="0ne" id="img04" src="./newimage/industrialengine/menu1/six/T4.png" alt="Button 3 Image">
+         </button>
+         <button class="button button5" onclick="changeImage('./newimage/industrialengine/menu1/six/content05.png', this)">
+            <img class="0ne" id="img05" src="./newimage/industrialengine/menu1/six/T5.png" alt="Button 1 Image">
+        </button>
+        <button class="button button6" onclick="changeImage('./newimage/industrialengine/menu1/six/content06.png', this)">
+            <img class="0ne"  id="img06" src="./newimage/industrialengine/menu1/six/T6.png" alt="Button 2 Image">
+        </button>
+        <button class="button button7" onclick="changeImage('./newimage/industrialengine/menu1/six/content07.png', this)">
+            <img class="0ne" id="img07" src="./newimage/industrialengine/menu1/six/T7.png" alt="Button 3 Image">
+        </button>
+        <button class="button button8" onclick="changeImage('./newimage/industrialengine/menu1/six/content08.png', this)">
+            <img class="0ne" id="img08" src="./newimage/industrialengine/menu1/six/T8.png" alt="Button 3 Image">
+        </button>
+
+ 
+         </div>
         <div id="iframeContainer">
             <iframe src="https://mxstudio.appdataroom.com/?f=MPlNT6rm" frameborder="0"></iframe>
         </div>
@@ -228,41 +342,13 @@
         </div> -->
 
         <div class="image1">
-            <img src="./newimage/frame1/Content02.png" alt="Right Image" id="first">
+            <img src="./newimage/industrialengine/menu1/six/content01.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
             
         </div>
-        <div id="buttonContainer">
-            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
-            <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01.png', this)">
-             <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/fifth/T1hov.png" alt="Button 1 Image">
-         </button>
-         <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_1.png', this)">
-             <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/fifth/T2.png" alt="Button 2 Image">
-         </button>
-         <button class="button button3" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_2.png', this)">
-             <img class="0ne" id="img03" src="./newimage/industrialengine/menu1/fifth/T3.png" alt="Button 3 Image">
-         </button>
-         <button class="button button4" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_3.png', this)">
-             <img class="0ne" id="img04" src="./newimage/industrialengine/menu1/fifth/T4.png" alt="Button 3 Image">
-         </button>
-         <button class="button button5" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01.png', this)">
-            <img class="0ne" id="img05" src="./newimage/industrialengine/menu1/fifth/T1hov.png" alt="Button 1 Image">
-        </button>
-        <button class="button button6" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_1.png', this)">
-            <img class="0ne"  id="img06" src="./newimage/industrialengine/menu1/fifth/T2.png" alt="Button 2 Image">
-        </button>
-        <button class="button button7" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_2.png', this)">
-            <img class="0ne" id="img07" src="./newimage/industrialengine/menu1/fifth/T3.png" alt="Button 3 Image">
-        </button>
-        <button class="button button8" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_3.png', this)">
-            <img class="0ne" id="img08" src="./newimage/industrialengine/menu1/fifth/T4.png" alt="Button 3 Image">
-        </button>
-
- 
-         </div>
+       
        
         </div>
     </div>
@@ -273,10 +359,10 @@
         './newimage/industrialengine/menu1/six/T2.png',
         './newimage/industrialengine/menu1/six/T3.png',
         './newimage/industrialengine/menu1/six/T4.png',
-        './newimage/industrialengine/menu1/six/T1.png',
-        './newimage/industrialengine/menu1/six/T2.png',
-        './newimage/industrialengine/menu1/six/T3.png',
-        './newimage/industrialengine/menu1/six/T4.png'
+        './newimage/industrialengine/menu1/six/T5.png',
+        './newimage/industrialengine/menu1/six/T6.png',
+        './newimage/industrialengine/menu1/six/T7.png',
+        './newimage/industrialengine/menu1/six/T8.png'
     ];
 
     var hoverImages = [
@@ -284,10 +370,10 @@
         './newimage/industrialengine/menu1/six/T2hov.png',
         './newimage/industrialengine/menu1/six/T3hov.png',
         './newimage/industrialengine/menu1/six/T4hov.png',
-        './newimage/industrialengine/menu1/six/T1hov.png',
-        './newimage/industrialengine/menu1/six/T2hov.png',
-        './newimage/industrialengine/menu1/six/T3hov.png',
-        './newimage/industrialengine/menu1/six/T4hov.png'
+        './newimage/industrialengine/menu1/six/T5hov.png',
+        './newimage/industrialengine/menu1/six/T6hov.png',
+        './newimage/industrialengine/menu1/six/T7hov.png',
+        './newimage/industrialengine/menu1/six/T8hov.png'
     ];
 
         function goBack() {
@@ -319,18 +405,18 @@
         // Add 'clicked' class to the clicked button
         button.classList.add('clicked');
     }
-        function autoRedirect() {
-        // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
-        const timeoutDuration = 30000;
+    //     function autoRedirect() {
+    //     // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
+    //     const timeoutDuration = 30000;
 
-        setTimeout(() => {
-            // Specify the default page to redirect to
-            goToPage('index.html');
-        }, timeoutDuration);
-    }
+    //     setTimeout(() => {
+    //         // Specify the default page to redirect to
+    //         goToPage('index.html');
+    //     }, timeoutDuration);
+    // }
 
-    // Call the autoRedirect function when the page loads
-    window.onload = autoRedirect;
+    // // Call the autoRedirect function when the page loads
+    // window.onload = autoRedirect;
     </script>
 </body>
 </html>
