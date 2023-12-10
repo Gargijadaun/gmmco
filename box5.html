@@ -27,13 +27,13 @@
             background-size: cover; */
         }
          .button.clicked #img01 {
-            content: url('./newimage/T1\ model5.png');
+            content: url('./newimage/industrialengine/menu1/first/T4hov.png');  
         }
         .button.clicked #img02 {
-            content: url('./newimage/T2\ model5hov.png');
+            content: url('./newimage/industrialengine/menu1/first/T5hov.png'); 
         }
         .button.clicked #img03 {
-            content: url('./newimage/T3\ model5hov01.png');
+            content: url('./newimage/industrialengine/menu1/first/T6hov.png');
         }
         #video {
             position: relative;
@@ -58,13 +58,13 @@
             padding: 0;
         }
         #img01:hover {
-            content: url('./newimage/T1\ model5.png');   
+            content: url('./newimage/industrialengine/menu1/first/T4hov.png');   
         }
         #img02:hover  {
-            content: url('./newimage/T2\ model5hov.png');   
+            content: url('./newimage/industrialengine/menu1/first/T5hov.png');   
         }
       #img03:hover {
-            content: url('./newimage/T3\ model5hov01.png');   
+            content: url('./newimage/industrialengine/menu1/first/T6hov.png');   
         }
 
         .button img {
@@ -148,7 +148,7 @@
             height: 58%;
     width: 50%;
     position: relative;
-    bottom: 14%;
+    bottom: 21%;
     left: 27%;
     display: flex;
     flex-direction: row;
@@ -321,12 +321,12 @@
         </div>
        
         <div class="image">
-            <img src="./newimage/frame1/Left_image05.png" alt="Left Image">
+            <img src="./newimage/industrialengine/menu1/first/Left_image05.png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./newimage/frame1/content05.png" alt="Right Image" id="first">
+            <img src="./newimage/industrialengine/menu1/first/content05.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
@@ -334,14 +334,14 @@
         </div>
         <div id="buttonContainer">
            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
-           <button class="button button1" onclick="changeImage('./newimage/frame1/content05.png', this)">
-            <img class="0ne" id="img01" src="./newimage/T1 model5.png" alt="Button 1 Image">
+           <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/first/content05.png', this)">
+            <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/first/T4hov.png" alt="Button 1 Image">
         </button>
-        <button class="button button2" onclick="changeImage('./newimage/frame1/content05_1.png', this)">
-            <img class="0ne"  id="img02" src="./newimage/T2 model5.png" alt="Button 2 Image">
+        <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/first/content05_1.png', this)">
+            <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/first/T5.png" alt="Button 2 Image">
         </button>
-        <button class="button button3" onclick="changeImage('./newimage/frame1/content05_1.png', this)">
-            <img class="0ne" id="img03" src="./newimage/T3 model5.png" alt="Button 3 Image">
+        <button class="button button3" onclick="changeImage('./newimage/industrialengine/menu1/first/content05_2.png', this)">
+            <img class="0ne" id="img03" src="./newimage/industrialengine/menu1/first/T6.png" alt="Button 3 Image">
         </button>
         
 
@@ -355,15 +355,15 @@
 <script>
     // Define arrays for original and hover images
     var originalImages = [
-        './newimage/T1 model5hov.png',
-        './newimage/T2 model5.png',
-        './newimage/T3 model5.png'
+        './newimage/industrialengine/menu1/first/T4.png',
+        './newimage/industrialengine/menu1/first/T5.png',
+        './newimage/industrialengine/menu1/first/T6.png'
     ];
 
     var hoverImages = [
-        './newimage/T1 model5.png',
-        './newimage/T2model5hov.png',
-        './newimage/T3\ model5hov01.png'
+        './newimage/industrialengine/menu1/first/T4hov.png',
+        './newimage/industrialengine/menu1/first/T5hov.png',
+        './newimage/industrialengine/menu1/first/T6hov.png'
     ];
 
     function changeText(newText) {

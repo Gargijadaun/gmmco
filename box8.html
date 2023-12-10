@@ -27,10 +27,10 @@
             background-size: cover; */
         }
          .button.clicked #img01 {
-            content: url('./newimage/frame2/T1hov.png');
+            content: url('./newimage/industrialengine/menu1/first/T11hov.png');
         }
         .button.clicked #img02 {
-            content: url('./newimage/frame2/T1hov.png');
+            content: url('./newimage/industrialengine/menu1/first/T12hov.png');
         }
        
         #video {
@@ -56,10 +56,10 @@
             padding: 0;
         }
         #img01:hover {
-            content: url('./newimage/frame2/T1.png');   
+            content: url('./newimage/industrialengine/menu1/first/T11hov.png');   
         }
         #img02:hover  {
-            content: url('./newimage/frame2/T1hov.png');   
+            content: url('./newimage/industrialengine/menu1/first/T12hov.png');   
         }
      
 
@@ -318,12 +318,12 @@
         </div>
        
         <div class="image">
-            <img src="./newimage/frame2/Left_image03.png" alt="Left Image">
+            <img src="./newimage/industrialengine/menu1/first/Left_image08.png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./newimage/frame2/content03.png" alt="Right Image" id="first">
+            <img src="./newimage/industrialengine/menu1/first/content08.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
@@ -331,11 +331,11 @@
         </div>
         <div id="buttonContainer">
            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
-           <button class="button button1" onclick="changeImage('./newimage/frame2/Content03.png', this)">
-            <img class="0ne" id="img01" src="./newimage/frame2/T1hov.png" alt="Button 1 Image">
+           <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/first/content08.png', this)">
+            <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/first/T11hov.png" alt="Button 1 Image">
         </button>
-        <button class="button button2" onclick="changeImage('./newimage/frame2/content03_1.png', this)">
-            <img class="0ne"  id="img02" src="./newimage/frame2/T1.png" alt="Button 2 Image">
+        <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/first/content08_1.png', this)">
+            <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/first/T12.png" alt="Button 2 Image">
         </button>
      
         
@@ -350,14 +350,14 @@
 <script>
     // Define arrays for original and hover images
     var originalImages = [
-        './newimage/frame2/T1.png',
-        './newimage/frame2/T1.png',
+        './newimage/industrialengine/menu1/first/T11.png',
+        './newimage/industrialengine/menu1/first/T12.png',
        
     ];
 
     var hoverImages = [
-        './newimage/frame2/T1hov.png',
-        './newimage/frame2/T1hov.png',
+        './newimage/industrialengine/menu1/first/T11hov.png',
+        './newimage/industrialengine/menu1/first/T12hov.png',
        
     ];
 
@@ -386,7 +386,7 @@
         // Change the image of the other buttons to the original image
         if (btn !== button) {
             var otherButtonImage = btn.querySelector('img');
-            otherButtonImage.src = './newimage/frame2/T1.png';
+            otherButtonImage.src = './newimage/industrialengine/menu1/first/T11.png';
         }
     });
 
@@ -395,7 +395,7 @@
 
     // Change the image of the clicked button to the hover image
     var buttonImage = button.querySelector('img');
-    buttonImage.src = './newimage/frame2/T1hov.png';
+    buttonImage.src = './newimage/industrialengine/menu1/first/T11hov.png';
 }
 
 function autoRedirect() {
