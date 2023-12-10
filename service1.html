@@ -14,7 +14,7 @@
     justify-content: center;
     height: 100vh;
     overflow: hidden;
-    background-image: url('./newimage/serviceimage/Frame_03-\ Parts1.jpg');
+    background-image: url('./newimage/BG.png');
     background-repeat: no-repeat, no-repeat;
     background-size: cover, cover;
     text-align: center;
@@ -55,7 +55,7 @@
             height: 100vh;
         }
 
-        #logoTop, #logoBottom {
+        #logoTop {
             width: 100%;
             max-width: 28%;
             height: auto;
@@ -63,14 +63,21 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
+      #logoBottom {
+        width: 100%;
+    max-width: 83%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+        }
         #logoTop {
             top: 5%;
         }
 
         #logoBottom {
-            display: none;
-            bottom: 5%;
+            display: block;
+            bottom: 2%;
         }
         #button {
     width: 100%;
@@ -116,7 +123,7 @@
         </div>
         <!-- <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo"> -->
        
-        <img id="logoBottom" src="./newimage/homedowntext.png" alt="Bottom Logo">
+        <img id="logoBottom" src="./newimage/serviceimage/text2.png" alt="Bottom Logo">
     </div>
     <script>
         function goToNextPage() {
