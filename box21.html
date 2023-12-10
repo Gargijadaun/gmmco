@@ -82,20 +82,20 @@
             height: auto;
         }
 
-        .image {
+        /* .image {
             height: 70%;
     top: 27%;
     width: 46%;
     left: 27%;
-    /* transform: translateX(-50%); */
+    /* transform: translateX(-50%); 
     position: relative;
-    }
+    } */
 
     .image1 {
         height: 83%;
     top: 21%;
     width: 85%;
-    left: 0%;
+    left: 6%;
     /* transform: translateX(-50%); */
     position: relative;
     }
@@ -115,6 +115,19 @@
 
         #logoTop {
             top: 39%;
+        }
+
+        #iframeContainer {
+         
+            width: 100%; /* Adjust the width as needed */
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
 
@@ -198,7 +211,10 @@
 </head>
 <body>
     <div class="boxco">
-        <img id="logoTop" src="./newimage/logo.png" alt="Top Logo">
+        <div id="iframeContainer">
+            <iframe src="https://mxstudio.appdataroom.com/?f=MPlNT6rm" frameborder="0"></iframe>
+        </div>
+        <!-- <img id="logoTop" src="./newimage/logo.png" alt="Top Logo"> -->
         <div class="backButton01" onclick="goBack()">
             <img src="./newimage/newback.png" alt="Back Button">
         </div>
@@ -206,10 +222,10 @@
             <img src="./newimage/home.png" alt="Back Button">
         </div>
        
-        <div class="image">
+        <!-- <div class="image">
             <img src="./newimage/frame1/Left_image02.png" alt="Left Image">
           
-        </div>
+        </div> -->
 
         <div class="image1">
             <img src="./newimage/frame1/Content02.png" alt="Right Image" id="first">
@@ -218,12 +234,62 @@
             <img src="./images/key.png" alt="Image 2" id="child"> -->
             
         </div>
+        <div id="buttonContainer">
+            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
+            <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01.png', this)">
+             <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/fifth/T1hov.png" alt="Button 1 Image">
+         </button>
+         <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_1.png', this)">
+             <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/fifth/T2.png" alt="Button 2 Image">
+         </button>
+         <button class="button button3" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_2.png', this)">
+             <img class="0ne" id="img03" src="./newimage/industrialengine/menu1/fifth/T3.png" alt="Button 3 Image">
+         </button>
+         <button class="button button4" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_3.png', this)">
+             <img class="0ne" id="img04" src="./newimage/industrialengine/menu1/fifth/T4.png" alt="Button 3 Image">
+         </button>
+         <button class="button button5" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01.png', this)">
+            <img class="0ne" id="img05" src="./newimage/industrialengine/menu1/fifth/T1hov.png" alt="Button 1 Image">
+        </button>
+        <button class="button button6" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_1.png', this)">
+            <img class="0ne"  id="img06" src="./newimage/industrialengine/menu1/fifth/T2.png" alt="Button 2 Image">
+        </button>
+        <button class="button button7" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_2.png', this)">
+            <img class="0ne" id="img07" src="./newimage/industrialengine/menu1/fifth/T3.png" alt="Button 3 Image">
+        </button>
+        <button class="button button8" onclick="changeImage('./newimage/industrialengine/menu1/fifth/content01_3.png', this)">
+            <img class="0ne" id="img08" src="./newimage/industrialengine/menu1/fifth/T4.png" alt="Button 3 Image">
+        </button>
+
+ 
+         </div>
        
         </div>
     </div>
 
     <script>
-     
+      var originalImages = [
+        './newimage/industrialengine/menu1/six/T1.png',
+        './newimage/industrialengine/menu1/six/T2.png',
+        './newimage/industrialengine/menu1/six/T3.png',
+        './newimage/industrialengine/menu1/six/T4.png',
+        './newimage/industrialengine/menu1/six/T1.png',
+        './newimage/industrialengine/menu1/six/T2.png',
+        './newimage/industrialengine/menu1/six/T3.png',
+        './newimage/industrialengine/menu1/six/T4.png'
+    ];
+
+    var hoverImages = [
+        './newimage/industrialengine/menu1/six/T1hov.png',
+        './newimage/industrialengine/menu1/six/T2hov.png',
+        './newimage/industrialengine/menu1/six/T3hov.png',
+        './newimage/industrialengine/menu1/six/T4hov.png',
+        './newimage/industrialengine/menu1/six/T1hov.png',
+        './newimage/industrialengine/menu1/six/T2hov.png',
+        './newimage/industrialengine/menu1/six/T3hov.png',
+        './newimage/industrialengine/menu1/six/T4hov.png'
+    ];
+
         function goBack() {
             window.history.back();
         }
@@ -232,6 +298,27 @@
             window.location.href = page;
         }
 
+        function changeImage(newSource, button) {
+        var imageElement = document.getElementById('first');
+        imageElement.src = newSource;
+
+        // If the clicked button is the second or third button, change the image of the first button
+        if (button.classList.contains('button2') || button.classList.contains('button3') || button.classList.contains('button4') || button.classList.contains('button5') || button.classList.contains('button6') || button.classList.contains('button7') || button.classList.contains('button8')) {
+            var firstButton = document.querySelector('.button1');
+            firstButton.classList.add('clicked');
+            var firstImage = document.getElementById('img01');
+            firstImage.src = originalImages[0];
+        }
+
+        // Remove 'clicked' class from all buttons
+        var buttons = document.querySelectorAll('.button');
+        buttons.forEach(function (btn) {
+            btn.classList.remove('clicked');
+        });
+
+        // Add 'clicked' class to the clicked button
+        button.classList.add('clicked');
+    }
         function autoRedirect() {
         // Set the timeout duration in milliseconds (e.g., 5000 for 5 seconds)
         const timeoutDuration = 30000;

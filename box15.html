@@ -27,10 +27,10 @@
             background-size: cover; */
         }
          .button.clicked #img01 {
-            content: url('./newimage/industrialengine/menu1/first/T7hov.png');
+            content: url('./newimage/industrialengine/menu1/third/T1hov.png'); 
         }
         .button.clicked #img02 {
-            content: url('./newimage/industrialengine/menu1/first/T8hov.png');
+            content: url('./newimage/industrialengine/menu1/third/T2hov.png'); 
         }
        
         #video {
@@ -56,10 +56,10 @@
             padding: 0;
         }
         #img01:hover {
-            content: url('./newimage/industrialengine/menu1/first/T7hov.png');   
+            content: url('./newimage/industrialengine/menu1/third/T1hov.png');   
         }
         #img02:hover  {
-            content: url('./newimage/industrialengine/menu1/first/T8hov.png');   
+            content: url('./newimage/industrialengine/menu1/third/T2hov.png');   
         }
      
 
@@ -318,12 +318,12 @@
         </div>
        
         <div class="image">
-            <img src="./newimage/industrialengine/menu1/first/Left_image06.png" alt="Left Image">
+            <img src="./newimage/industrialengine/menu1/third/Left_image01.png" alt="Left Image">
             <div class="image-text">Some Text Over Image</div>
         </div>
 
         <div class="image1">
-            <img src="./newimage/industrialengine/menu1/first/content06.png" alt="Right Image" id="first">
+            <img src="./newimage/industrialengine/menu1/third/content01.png" alt="Right Image" id="first">
 <!--             
             <img src="./images/headin.png" alt="Image 2" id="headin">
             <img src="./images/key.png" alt="Image 2" id="child"> -->
@@ -331,11 +331,11 @@
         </div>
         <div id="buttonContainer">
            <!-- Corrected onclick attribute by passing 'this' (the clicked button) as an argument -->
-           <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/first/content06.png', this)">
-            <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/first/T7hov.png" alt="Button 1 Image">
+           <button class="button button1" onclick="changeImage('./newimage/industrialengine/menu1/third/content01.png', this)">
+            <img class="0ne" id="img01" src="./newimage/industrialengine/menu1/third/T1hov.png" alt="Button 1 Image">
         </button>
-        <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/first/content06_1.png', this)">
-            <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/first/T8.png" alt="Button 2 Image">
+        <button class="button button2" onclick="changeImage('./newimage/industrialengine/menu1/third/content01_1.png', this)">
+            <img class="0ne"  id="img02" src="./newimage/industrialengine/menu1/third/T2.png" alt="Button 2 Image">
         </button>
      
         
@@ -350,14 +350,14 @@
 <script>
     // Define arrays for original and hover images
     var originalImages = [
-        './newimage/industrialengine/menu1/first/T7.png',
-        './newimage/industrialengine/menu1/first/T8.png',
+        './newimage/industrialengine/menu1/third/T1.png',
+        './newimage/industrialengine/menu1/third/T2.png',
        
     ];
 
     var hoverImages = [
-        './newimage/industrialengine/menu1/first/T7hov.png',
-        './newimage/industrialengine/menu1/first/T8hov.png',
+        './newimage/industrialengine/menu1/third/T1hov.png',
+        './newimage/industrialengine/menu1/third/T2hov.png',
        
     ];
 
@@ -386,7 +386,7 @@
         // Change the image of the other buttons to the original image
         if (btn !== button) {
             var otherButtonImage = btn.querySelector('img');
-            otherButtonImage.src = './newimage/industrialengine/menu1/first/T7.png';
+            otherButtonImage.src = './newimage/industrialengine/menu1/third/T1.png';
         }
     });
 
@@ -395,7 +395,7 @@
 
     // Change the image of the clicked button to the hover image
     var buttonImage = button.querySelector('img');
-    buttonImage.src = './newimage/industrialengine/menu1/first/T7hov.png';
+    buttonImage.src = './newimage/industrialengine/menu1/third/T1hov.png';
 }
 
 function autoRedirect() {
