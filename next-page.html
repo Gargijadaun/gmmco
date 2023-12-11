@@ -82,7 +82,19 @@
             cursor: pointer;
            
         }
+        .backButton01 {
+            width: 2.8%;
+            position: fixed;
+            top: 21px;
+            left: 35px;
+            animation-name: slideInLeft;
+        }
 
+        .backButton01 img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
         .imageLink img {
             box-sizing: border-box;
             width: 100%;
@@ -152,6 +164,9 @@
 
 <body>
     <div id="container">
+        <div class="backButton01" onclick="goBack()">
+            <img src="./newimage/newback.png" alt="Back Button">
+        </div>
         <img id="logoTop" src="./newimage/welcomelogo.png" alt="Top Logo">
         <div id="buttonContainer">
             <div class="imageLink" onclick="goToPage('page1.html')">
@@ -172,6 +187,10 @@
     </div>
 
     <script>
+         function goBack() {
+         window.history.back();
+     }
+
         function goToPage(page) {
             window.location.href = page;
         }
